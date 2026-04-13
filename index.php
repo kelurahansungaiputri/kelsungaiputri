@@ -489,7 +489,7 @@
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="berita-item">
-              <h3>Program Pemberdayaan Masyarakat</h3>
+              <h3><a href="#" target="_blank">Program Pemberdayaan Masyarakat</a></h3>
               <p class="fst-italic text-muted">Oleh Admin Kelurahan - 10 April 2026</p>
               <p>Kelurahan Sungai Putri telah melaksanakan program pemberdayaan masyarakat yang bertujuan meningkatkan ekonomi lokal dan kesejahteraan warga.</p>
             </div>
@@ -497,7 +497,7 @@
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="berita-item">
-              <h3>Pelatihan Keterampilan untuk Pemuda</h3>
+              <h3><a href="#" target="_blank">Pelatihan Keterampilan untuk Pemuda</a></h3>
               <p class="fst-italic text-muted">Oleh Admin Kelurahan - 05 April 2026</p>
               <p>Pelatihan keterampilan gratis diberikan kepada generasi muda Kelurahan Sungai Putri untuk meningkatkan kompetensi dan daya saing mereka.</p>
             </div>
@@ -505,7 +505,7 @@
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <div class="berita-item">
-              <h3>Peluncuran Website Kelurahan</h3>
+              <h3><a href="#" target="_blank">Peluncuran Website Kelurahan</a></h3>
               <p class="fst-italic text-muted">Oleh Admin Kelurahan - 01 April 2026</p>
               <p>Kelurahan Sungai Putri secara resmi meluncurkan website untuk meningkatkan transparansi dan layanan digital kepada masyarakat.</p>
             </div>
@@ -513,7 +513,7 @@
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
             <div class="berita-item">
-              <h3>Kegiatan Kesehatan Masyarakat</h3>
+              <h3><a href="#" target="_blank">Kegiatan Kesehatan Masyarakat</a></h3>
               <p class="fst-italic text-muted">Oleh Admin Kelurahan - 25 Maret 2026</p>
               <p>Posyandu dan kegiatan kesehatan rutin dilaksanakan untuk memastikan kesehatan optimal seluruh warga Kelurahan Sungai Putri.</p>
             </div>
