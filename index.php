@@ -862,7 +862,7 @@
               <div class="col-lg-12">
                 <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
                   <i class="bi bi-geo-alt"></i>
-                  <h3>Address</h3>
+                  <h3>Alamat</h3>
                   <p>Jln. Prof.Dr. Sri Soedewi, SH,MH RT.12</p>
                 </div>
               </div><!-- End Info Item -->
