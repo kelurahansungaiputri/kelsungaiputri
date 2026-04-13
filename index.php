@@ -93,30 +93,44 @@
       <div class="container">
 
         <div class="row gy-4">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3>Demografi Penduduk Kelurahan Sungai Putri</h3>
-            <img src="assets/img/about.jpg" class="img-fluid rounded-4 mb-4" alt="">
-            <p>Kelurahan Sungai Putri memiliki total penduduk sebanyak 508 jiwa, dengan 84 kepala keluarga. Penduduk terdiri dari 269 laki-laki dan 239 perempuan.</p>
-            <p>Berdasarkan agama, mayoritas penduduk beragama Islam sebanyak 412 jiwa, diikuti oleh Kepercayaan lainnya 82 jiwa, dan Kristen 14 jiwa.</p>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
-            <div class="content ps-0 ps-lg-5">
-              <p class="fst-italic">
-                Berdasarkan status perkawinan, penduduk yang belum kawin sebanyak 252 jiwa, kawin 248 jiwa, cerai mati 4 jiwa, dan cerai hidup 4 jiwa.
+          <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
+            <h2 style="color: #27ae60; text-align: center; margin-bottom: 10px;">Visi dan Misi Kota Jambi Bahagia Tahun 2025-2029</h2>
+            <h3 style="text-align: center; margin-bottom: 30px;">Kelurahan Sungai Putri</h3>
+            
+            <div style="background-color: #f0f8f5; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
+              <h4 style="color: #27ae60; margin-bottom: 15px;">Visi</h4>
+              <p style="font-size: 16px; line-height: 1.8;">
+                Mewujudkan kota perdagangan dan jasa yang bersih, aman, harmonis, agamis, inovatif, dan sejahtera
               </p>
-              <ul>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Pekerjaan utama: Petani/Pekebun (159 jiwa), Mengurus Rumah Tangga (66 jiwa), Belum/Tidak Bekerja (211 jiwa).</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Pendidikan: Data pendidikan tersedia untuk memberikan wawasan lebih lanjut.</span></li>
-                <li><i class="bi bi-check-circle-fill"></i> <span>Dusun: Jati Sari (394 jiwa), Belukar Rajo (17 jiwa), dan lainnya.</span></li>
-              </ul>
-              <p>
-                Kelurahan Sungai Putri berkomitmen untuk melayani masyarakat dengan informasi yang akurat dan terkini.
-              </p>
+            </div>
 
-              <div class="position-relative mt-4">
-                <img src="assets/img/about-2.jpg" class="img-fluid rounded-4" alt="">
-                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn"></a>
-              </div>
+            <div style="background-color: #f0f8f5; padding: 30px; border-radius: 8px;">
+              <h4 style="color: #27ae60; margin-bottom: 15px;">Misi</h4>
+              <p style="font-size: 14px; margin-bottom: 20px; font-style: italic;">
+                Upaya untuk mewujudkan visi tersebut dirumuskan melalui lima misi pembangunan, yaitu:
+              </p>
+              <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 12px; padding-left: 30px; position: relative;">
+                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
+                  <span>Penguatan pengelolaan infrastruktur dan lingkungan hidup yang merata, berkualitas, dan berkelanjutan.</span>
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 30px; position: relative;">
+                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
+                  <span>Penguatan ketertiban dan ketentraman lingkungan serta partisipasi masyarakat dalam pembangunan.</span>
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 30px; position: relative;">
+                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
+                  <span>Penguatan kapasitas ekonomi perkantoran.</span>
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 30px; position: relative;">
+                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
+                  <span>Penguatan kualitas sumber daya manusia.</span>
+                </li>
+                <li style="padding-left: 30px; position: relative;">
+                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
+                  <span>Penguatan tata kelola pemerintah yang baik.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -1031,8 +1045,10 @@
             <span class="sitename">Kelurahan Sungai Putri</span>
           </a>
           <div class="footer-contact pt-3">
+            <p><strong>Pemerintah Kelurahan Sungai Putri</strong></p>
             <p>Jln. Prof.Dr. Sri Soedewi, SH,MH RT.12</p>
-            <p>Jambi</p>
+            <p>Kecamatan Danau Sipin, Kota Jambi</p>
+            <p>Provinsi Jambi 37562</p>
             <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
             <p><strong>Email:</strong> <span>info@example.com</span></p>
           </div>
