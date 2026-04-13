@@ -94,41 +94,36 @@
 
         <div class="row gy-4">
           <div class="col-lg-12" data-aos="fade-up" data-aos-delay="100">
-            <h2 style="color: #27ae60; text-align: center; margin-bottom: 10px;">Visi dan Misi Kota Jambi Bahagia Tahun 2025-2029</h2>
-            <h3 style="text-align: center; margin-bottom: 30px;">Kelurahan Sungai Putri</h3>
+            <h2 style="color: #27ae60; text-align: center; margin-bottom: 10px;">VISI DAN MISI KOTA JAMBI BAHAGIA TAHUN 2025-2029</h2>
+            <h3 style="text-align: center; margin-bottom: 30px;">KELURAHAN SUNGAI PUTRI</h3>
             
             <div style="background-color: #f0f8f5; padding: 30px; border-radius: 8px; margin-bottom: 30px;">
-              <h4 style="color: #27ae60; margin-bottom: 15px;">Visi</h4>
+              <h4 style="color: #27ae60; margin-bottom: 15px;">VISI</h4>
               <p style="font-size: 16px; line-height: 1.8;">
-                Mewujudkan kota perdagangan dan jasa yang bersih, aman, harmonis, agamis, inovatif, dan sejahtera
+                MEWUJUDKAN KOTA PERDAGANGAN DAN JASA YANG BERSIH, AMAN, HARMONIS, AGAMIS, INOVATIF, DAN SEJAHTERA
               </p>
             </div>
 
             <div style="background-color: #f0f8f5; padding: 30px; border-radius: 8px;">
-              <h4 style="color: #27ae60; margin-bottom: 15px;">Misi</h4>
+              <h4 style="color: #27ae60; margin-bottom: 15px;">MISI</h4>
               <p style="font-size: 14px; margin-bottom: 20px; font-style: italic;">
-                Upaya untuk mewujudkan visi tersebut dirumuskan melalui lima misi pembangunan, yaitu:
+                UPAYA UNTUK MEWUJUDKAN VISI TERSEBUT DIRUMUSKAN MELALUI LIMA MISI PEMBANGUNAN, YAITU:
               </p>
               <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 12px; padding-left: 30px; position: relative;">
-                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
-                  <span>Penguatan pengelolaan infrastruktur dan lingkungan hidup yang merata, berkualitas, dan berkelanjutan.</span>
+                <li style="margin-bottom: 12px; padding-left: 20px; position: relative;">
+                  • PENGUATAN PENGELOLAAN INFRASTRUKTUR DAN LINGKUNGAN HIDUP YANG MERATA, BERKUALITAS, DAN BERKELANJUTAN.
                 </li>
-                <li style="margin-bottom: 12px; padding-left: 30px; position: relative;">
-                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
-                  <span>Penguatan ketertiban dan ketentraman lingkungan serta partisipasi masyarakat dalam pembangunan.</span>
+                <li style="margin-bottom: 12px; padding-left: 20px; position: relative;">
+                  • PENGUATAN KETERTIBAN DAN KETENTRAMAN LINGKUNGAN SERTA PARTISIPASI MASYARAKAT DALAM PEMBANGUNAN.
                 </li>
-                <li style="margin-bottom: 12px; padding-left: 30px; position: relative;">
-                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
-                  <span>Penguatan kapasitas ekonomi perkantoran.</span>
+                <li style="margin-bottom: 12px; padding-left: 20px; position: relative;">
+                  • PENGUATAN KAPASITAS EKONOMI PERKANTORAN.
                 </li>
-                <li style="margin-bottom: 12px; padding-left: 30px; position: relative;">
-                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
-                  <span>Penguatan kualitas sumber daya manusia.</span>
+                <li style="margin-bottom: 12px; padding-left: 20px; position: relative;">
+                  • PENGUATAN KUALITAS SUMBER DAYA MANUSIA.
                 </li>
-                <li style="padding-left: 30px; position: relative;">
-                  <i class="bi bi-check-circle-fill" style="position: absolute; left: 0; color: #27ae60;"></i>
-                  <span>Penguatan tata kelola pemerintah yang baik.</span>
+                <li style="padding-left: 20px; position: relative;">
+                  • PENGUATAN TATA KELOLA PEMERINTAH YANG BAIK.
                 </li>
               </ul>
             </div>
