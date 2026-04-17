@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Demografis - KELURAHAN SUNGAI PUTRI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-left">
+            <span><i class="fas fa-envelope" style="margin-right:4px"></i> sungaiputri655@gmail.com</span>
+            <span><i class="fas fa-phone" style="margin-right:4px"></i> (0851) 5653 0835</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container">
+        <div class="header-logo">
+            <div class="logo-icon">SP</div>
+            <div class="logo-text">
+                <h1>KELURAHAN SUNGAI PUTRI</h1>
+                <h2>KECAMATAN DANAU SIPIN</h2>
+                <p>JAMBI - Provinsi JAMBI</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Cari informasi...">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container">
+        <ul class="nav-menu">
+            <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+            <li>
+                <a href="#">Profil <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#"><i class="fas fa-circle"></i> Sejarah Kelurahan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Visi & Misi</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Wilayah & Batas</a></li>
+                    <li><a href="data-demografis.html"><i class="fas fa-circle"></i> Data Demografis</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Potensi Kelurahan</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Pemerintahan <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#"><i class="fas fa-circle"></i> Lurah</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Sekretaris</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Kasi & Kaur</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Ketua RT / RW</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Layanan</a></li>
+            <li><a href="#">Berita</a></li>
+            <li><a href="#">Galeri</a></li>
+            <li>
+                <a href="#">Informasi <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#"><i class="fas fa-circle"></i> Pengumuman</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Agenda Kegiatan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Download</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+        <div class="mobile-menu-header">
+            <span>Menu Utama</span>
+            <button class="mobile-menu-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-nav">
+            <li><a href="index.html" class="mobile-link"><span>Beranda</span></a></li>
+            <li>
+                <a href="#" class="mobile-link" data-toggle="mob-drop-1"><span>Profil</span> <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown" id="mob-drop-1">
+                    <li><a href="#"><i class="fas fa-circle"></i> Sejarah Kelurahan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Visi & Misi</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Wilayah & Batas</a></li>
+                    <li><a href="data-demografis.html"><i class="fas fa-circle"></i> Data Demografis</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="mobile-link" data-toggle="mob-drop-2"><span>Pemerintahan</span> <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown" id="mob-drop-2">
+                    <li><a href="#"><i class="fas fa-circle"></i> Lurah</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Sekretaris</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Kasi & Kaur</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="mobile-link"><span>Layanan</span></a></li>
+            <li><a href="#" class="mobile-link"><span>Berita</span></a></li>
+            <li><a href="#" class="mobile-link"><span>Galeri</span></a></li>
+            <li><a href="#" class="mobile-link"><span>Kontak</span></a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- DATA DEMOGRAFIS -->
+<section class="section">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="overline">Profil</div>
+            <h2>Data Demografis</h2>
+            <p>Data umum Kelurahan Sungai Putri Kecamatan Danau Sipin</p>
+        </div>
+        <div class="data-demografis-grid">
+            <div class="data-card fade-up">
+                <div class="data-icon"><i class="fas fa-map"></i></div>
+                <h3>Luas Wilayah</h3>
+                <p>159 Ha</p>
+            </div>
+            <div class="data-card fade-up d1">
+                <div class="data-icon"><i class="fas fa-border-all"></i></div>
+                <h3>Batas Wilayah</h3>
+                <ul>
+                    <li><i class="fas fa-arrow-up"></i> Sebelah Utara berbatas dengan Kelurahan Solok Sipin dan Legok</li>
+                    <li><i class="fas fa-arrow-down"></i> Sebelah Selatan berbatas dengan Kelurahan Selamat</li>
+                    <li><i class="fas fa-arrow-left"></i> Sebelah Barat berbatas dengan Kelurahan Telanai Pura</li>
+                    <li><i class="fas fa-arrow-right"></i> Sebelah Timur berbatas dengan Kelurahan Payo Lebar</li>
+                </ul>
+            </div>
+            <div class="data-card fade-up d2">
+                <div class="data-icon"><i class="fas fa-home"></i></div>
+                <h3>Jumlah RT</h3>
+                <p>26</p>
+            </div>
+            <div class="data-card fade-up d3">
+                <div class="data-icon"><i class="fas fa-users"></i></div>
+                <h3>Jumlah Penduduk</h3>
+                <p>8.337 Jiwa</p>
+                <ul>
+                    <li>Laki-laki: 4.165 Jiwa</li>
+                    <li>Perempuan: 4.172 Jiwa</li>
+                </ul>
+            </div>
+            <div class="data-card fade-up d4">
+                <div class="data-icon"><i class="fas fa-user-friends"></i></div>
+                <h3>Jumlah Kepala Keluarga (KK)</h3>
+                <p>2.625</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-sm">
+                    <div class="icon-sm">SP</div>
+                    <span>Kelurahan Sungai Putri</span>
+                </div>
+                <p>Kantor Kelurahan Sungai Putri melayani masyarakat dengan sepenuh hati. Berkomitmen untuk memberikan pelayanan terbaik dalam administrasi kependudukan dan pembangunan kelurahan.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Menu Utama</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fas fa-circle"></i> Beranda</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Profil Kelurahan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Pemerintahan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Layanan Publik</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Berita & Artikel</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Galeri Kegiatan</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Layanan</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html#persyaratan"><i class="fas fa-circle"></i> Persyaratan Layanan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> KTP Elektronik</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Kartu Keluarga</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Surat Keterangan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Akta Kelahiran</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> SK Bersih Diri</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Kontak Kami</h4>
+                <ul class="footer-links footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i><span>Jl. Sungai Putri, Kec. Danau Sipin, Kota Jambi, Provinsi Jambi</span></li>
+                    <li><i class="fas fa-phone"></i><span>(0851) 5653 0835</span></li>
+                    <li><i class="fas fa-envelope"></i><span>sungaiputri655@gmail.com</span></li>
+                    <li><i class="fas fa-clock"></i><span>Senin - Jumat: 08.00 - 15.00 WIB</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 KELURAHAN SUNGAI PUTRI - KECAMATAN DANAU SIPIN. Hak Cipta Dilindungi.</span>
+            <span>Dibuat dengan <i class="fas fa-heart" style="color:var(--red)"></i> untuk masyarakat</span>
+        </div>
+    </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
