@@ -1,989 +1,777 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kelurahan Sungai Putri — Kota Jambi</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #0a1628;
-      --navy-mid: #142241;
-      --blue: #1a3a6b;
-      --gold: #27ae60;
-      --gold-light: #4caf50;
-      --cream: #f5f0e8;
-      --white: #ffffff;
-      --gray: #6b7280;
-      --light: #f8f6f1;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'Source Sans 3', sans-serif;
-      background: var(--white);
-      color: var(--navy);
-      overflow-x: hidden;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; width: 100%; z-index: 1000;
-      background: rgba(10,22,40,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(200,168,75,0.3);
-      padding: 0 40px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 70px;
-    }
-    .nav-logo {
-      display: flex; align-items: center; gap: 12px;
-      text-decoration: none;
-    }
-    .nav-logo-emblem {
-      width: 42px; height: 42px;
-      background: var(--gold);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 20px;
-    }
-    .nav-logo-text { color: var(--white); }
-    .nav-logo-text strong { display: block; font-family: 'Playfair Display', serif; font-size: 15px; line-height: 1.1; }
-    .nav-logo-text span { font-size: 11px; color: var(--gold); letter-spacing: 1px; }
-    .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
-      color: rgba(255,255,255,0.8); text-decoration: none;
-      font-size: 13px; letter-spacing: 0.5px; font-weight: 500;
-      transition: color 0.2s;
-      text-transform: uppercase;
-    }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta {
-      background: var(--gold); color: var(--navy);
-      padding: 9px 22px; border-radius: 4px;
-      font-size: 12px; font-weight: 700; text-decoration: none;
-      letter-spacing: 0.5px; text-transform: uppercase;
-      transition: background 0.2s;
-    }
-    .nav-cta:hover { background: var(--gold-light); }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(135deg, rgba(10,22,40,0.88) 0%, rgba(20,34,65,0.70) 60%, rgba(10,22,40,0.85) 100%),
-        url('https://upload.wikimedia.org/wikipedia/commons/a/a4/Kantor_Lurah_Sungai_Putri_-_Danau_Sipin%2C_Kota_Jambi%2C_JA.jpg') center/cover no-repeat;
-      display: flex; align-items: center;
-      padding: 120px 80px 80px;
-      position: relative; overflow: hidden;
-    }
-    .hero-decor {
-      position: absolute; right: 0; top: 0; bottom: 0;
-      width: 45%;
-      background: linear-gradient(135deg, transparent 0%, rgba(200,168,75,0.08) 100%);
-      border-left: 1px solid rgba(200,168,75,0.2);
-      clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
-    }
-    .hero-content { max-width: 640px; animation: fadeUp 1s ease both; }
-    .hero-tag {
-      display: inline-block;
-      background: rgba(200,168,75,0.15);
-      border: 1px solid rgba(200,168,75,0.4);
-      color: var(--gold);
-      padding: 5px 16px; border-radius: 20px;
-      font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-    .hero-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(42px, 6vw, 72px);
-      font-weight: 900; color: var(--white);
-      line-height: 1.05; margin-bottom: 20px;
-    }
-    .hero-content h1 em { color: var(--gold); font-style: normal; }
-    .hero-content p {
-      color: rgba(255,255,255,0.75); font-size: 17px;
-      line-height: 1.7; margin-bottom: 36px; max-width: 500px;
-    }
-    .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--gold); color: var(--navy);
-      padding: 14px 32px; border-radius: 4px;
-      font-size: 14px; font-weight: 700; text-decoration: none;
-      letter-spacing: 0.5px; transition: all 0.2s;
-    }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
-    .btn-outline {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.4);
-      color: var(--white);
-      padding: 14px 32px; border-radius: 4px;
-      font-size: 14px; text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-    .hero-stats {
-      position: absolute; bottom: 0; left: 0; right: 0;
-      background: rgba(10,22,40,0.9);
-      border-top: 1px solid rgba(200,168,75,0.3);
-      display: flex; justify-content: center;
-    }
-    .hero-stat {
-      padding: 28px 60px; text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.08);
-    }
-    .hero-stat:last-child { border-right: none; }
-    .hero-stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px; font-weight: 900;
-      color: var(--gold); line-height: 1;
-    }
-    .hero-stat-label {
-      font-size: 12px; color: rgba(255,255,255,0.55);
-      letter-spacing: 1px; text-transform: uppercase; margin-top: 4px;
-    }
-
-    /* ── SECTION COMMONS ── */
-    section { padding: 100px 80px; }
-    .section-tag {
-      display: inline-block;
-      color: var(--gold); font-size: 12px;
-      letter-spacing: 3px; text-transform: uppercase;
-      margin-bottom: 12px; font-weight: 600;
-    }
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(30px, 4vw, 46px); font-weight: 900;
-      color: var(--navy); line-height: 1.1; margin-bottom: 16px;
-    }
-    .section-sub {
-      color: var(--gray); font-size: 16px;
-      line-height: 1.7; max-width: 560px;
-    }
-    .section-header { margin-bottom: 60px; }
-    .divider {
-      width: 60px; height: 3px;
-      background: var(--gold); margin: 16px 0 20px;
-    }
-
-    /* ── VISI MISI ── */
-    #visi-misi {
-      background: var(--light);
-      position: relative; overflow: hidden;
-    }
-    #visi-misi::before {
-      content: '';
-      position: absolute; top: -80px; right: -80px;
-      width: 400px; height: 400px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,168,75,0.06) 0%, transparent 70%);
-    }
-    .vm-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 30px; margin-top: 50px;
-    }
-    .vm-card {
-      background: var(--white);
-      border: 1px solid #e8e0d0;
-      border-radius: 8px; padding: 40px;
-      position: relative; overflow: hidden;
-    }
-    .vm-card.visi {
-      grid-column: 1 / -1;
-      background: var(--navy);
-      border-color: transparent;
-    }
-    .vm-card::before {
-      content: '';
-      position: absolute; top: 0; left: 0;
-      width: 4px; height: 100%;
-      background: var(--gold);
-    }
-    .vm-card.visi::before { display: none; }
-    .vm-card-label {
-      font-size: 11px; letter-spacing: 3px;
-      text-transform: uppercase; margin-bottom: 16px;
-      font-weight: 700;
-    }
-    .vm-card.visi .vm-card-label { color: var(--gold); }
-    .vm-card:not(.visi) .vm-card-label { color: var(--gold); }
-    .vm-card.visi h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px; color: var(--white);
-      line-height: 1.5; font-weight: 700;
-    }
-    .vm-card:not(.visi) h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px; color: var(--navy);
-      line-height: 1.5; margin-bottom: 12px;
-    }
-    .vm-card p { color: var(--gray); font-size: 15px; line-height: 1.7; }
-    .misi-list { list-style: none; }
-    .misi-list li {
-      display: flex; align-items: flex-start; gap: 12px;
-      padding: 10px 0; border-bottom: 1px solid #f0ece4;
-      font-size: 14px; color: var(--navy); line-height: 1.5;
-    }
-    .misi-list li:last-child { border-bottom: none; }
-    .misi-num {
-      min-width: 24px; height: 24px;
-      background: var(--gold); color: var(--navy);
-      border-radius: 50%; display: flex; align-items: center;
-      justify-content: center; font-size: 11px; font-weight: 700;
-      margin-top: 1px;
-    }
-
-    /* ── SAMBUTAN ── */
-    #sambutan { background: var(--white); }
-    .sambutan-wrap {
-      display: grid; grid-template-columns: 380px 1fr;
-      gap: 70px; align-items: start;
-    }
-    .sambutan-photo-wrap {
-      position: relative;
-    }
-    .sambutan-photo {
-      width: 100%; aspect-ratio: 3/4;
-      object-fit: cover; border-radius: 6px;
-      background: var(--light);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .sambutan-photo-placeholder {
-      width: 100%; aspect-ratio: 3/4;
-      background: linear-gradient(145deg, #e8e0d0, #d4c8b0);
-      border-radius: 6px;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 12px; color: #8a7a60;
-    }
-    .sambutan-photo-placeholder svg { opacity: 0.5; }
-    .sambutan-badge {
-      position: absolute; bottom: -20px; right: -20px;
-      background: var(--navy); color: var(--white);
-      padding: 20px 24px; border-radius: 6px;
-      text-align: center; border: 3px solid var(--gold);
-    }
-    .sambutan-badge-title { font-size: 12px; opacity: 0.6; margin-bottom: 4px; }
-    .sambutan-badge-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px; font-weight: 700;
-    }
-    .sambutan-badge-role { font-size: 11px; color: var(--gold); margin-top: 3px; }
-    .sambutan-content { padding-top: 20px; }
-    .sambutan-greeting {
-      font-size: 14px; color: var(--gold);
-      letter-spacing: 1px; text-transform: uppercase;
-      font-weight: 600; margin-bottom: 20px;
-    }
-    .sambutan-text {
-      font-size: 16px; line-height: 1.8;
-      color: #374151; margin-bottom: 16px;
-    }
-    .sambutan-text.lead { font-size: 18px; color: var(--navy); font-weight: 500; }
-    .sambutan-goals {
-      background: var(--light); border-radius: 8px;
-      padding: 24px 28px; margin-top: 24px;
-      border-left: 4px solid var(--gold);
-    }
-    .sambutan-goals h4 {
-      font-size: 13px; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 14px; font-weight: 700;
-    }
-    .sambutan-goals ul { list-style: none; }
-    .sambutan-goals ul li {
-      display: flex; align-items: flex-start; gap: 10px;
-      font-size: 14px; color: var(--navy);
-      padding: 6px 0; line-height: 1.5;
-    }
-    .sambutan-goals ul li::before {
-      content: '✦'; color: var(--gold); font-size: 10px; margin-top: 3px;
-      flex-shrink: 0;
-    }
-    .sambutan-sign {
-      margin-top: 30px; padding-top: 24px;
-      border-top: 1px solid #e8e0d0;
-    }
-    .sambutan-sign p { font-size: 14px; color: var(--gray); margin-bottom: 8px; }
-    .sambutan-sign strong {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px; color: var(--navy);
-    }
-
-    /* ── DATA PENDUDUK ── */
-    #data { background: var(--navy); }
-    #data .section-title { color: var(--white); }
-    #data .section-sub { color: rgba(255,255,255,0.6); }
-    .data-grid {
-      display: grid; grid-template-columns: repeat(4, 1fr);
-      gap: 2px; margin-top: 60px;
-      background: rgba(255,255,255,0.06);
-      border-radius: 8px; overflow: hidden;
-    }
-    .data-card {
-      background: rgba(255,255,255,0.04);
-      padding: 40px 30px; text-align: center;
-    }
-    .data-icon { font-size: 32px; margin-bottom: 14px; opacity: 0.8; }
-    .data-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 52px; font-weight: 900;
-      color: var(--gold); line-height: 1;
-      margin-bottom: 8px;
-    }
-    .data-label {
-      font-size: 12px; color: rgba(255,255,255,0.5);
-      letter-spacing: 2px; text-transform: uppercase;
-    }
-    .data-tabs-wrap { margin-top: 60px; }
-    .data-tabs {
-      display: flex; gap: 2px; margin-bottom: 2px;
-    }
-    .data-tab {
-      background: rgba(255,255,255,0.06);
-      border: none; padding: 14px 28px;
-      color: rgba(255,255,255,0.5); font-size: 13px;
-      cursor: pointer; border-radius: 4px 4px 0 0;
-      font-family: 'Source Sans 3', sans-serif;
-      font-weight: 600; letter-spacing: 0.5px;
-      transition: all 0.2s;
-    }
-    .data-tab.active, .data-tab:hover {
-      background: var(--gold); color: var(--navy);
-    }
-    .data-pane {
-      background: rgba(255,255,255,0.04);
-      border-radius: 0 8px 8px 8px;
-      padding: 40px; display: none;
-    }
-    .data-pane.active { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .data-bar-list { list-style: none; }
-    .data-bar-item { margin-bottom: 18px; }
-    .data-bar-info {
-      display: flex; justify-content: space-between;
-      margin-bottom: 6px;
-    }
-    .data-bar-name { font-size: 13px; color: rgba(255,255,255,0.75); }
-    .data-bar-val { font-size: 13px; color: var(--gold); font-weight: 700; }
-    .data-bar-track {
-      height: 6px; background: rgba(255,255,255,0.1);
-      border-radius: 3px; overflow: hidden;
-    }
-    .data-bar-fill {
-      height: 100%; background: var(--gold); border-radius: 3px;
-      transition: width 1s ease;
-    }
-    .data-note {
-      font-size: 14px; color: rgba(255,255,255,0.5);
-      line-height: 1.7; padding-top: 20px;
-    }
-
-    /* ── LAYANAN ── */
-    #layanan { background: var(--light); }
-    .layanan-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 24px; margin-top: 50px;
-    }
-    .layanan-card {
-      background: var(--white);
-      border: 1px solid #e8e0d0;
-      border-radius: 8px; padding: 36px;
-      transition: all 0.25s;
-      position: relative; overflow: hidden;
-    }
-    .layanan-card:hover {
-      border-color: var(--gold);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(200,168,75,0.15);
-    }
-    .layanan-icon {
-      width: 56px; height: 56px;
-      background: var(--navy);
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px; margin-bottom: 20px;
-      transition: background 0.2s;
-    }
-    .layanan-card:hover .layanan-icon { background: var(--gold); }
-    .layanan-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 18px; color: var(--navy);
-      margin-bottom: 12px; font-weight: 700;
-    }
-    .layanan-card p { font-size: 14px; color: var(--gray); line-height: 1.7; }
-    .layanan-card .req {
-      margin-top: 16px; padding-top: 16px;
-      border-top: 1px solid #f0ece4;
-    }
-    .layanan-card .req-title {
-      font-size: 11px; color: var(--gold);
-      text-transform: uppercase; letter-spacing: 1.5px;
-      margin-bottom: 8px; font-weight: 700;
-    }
-    .layanan-card .req ul { list-style: none; }
-    .layanan-card .req ul li {
-      font-size: 12px; color: var(--gray);
-      padding: 3px 0; display: flex; gap: 6px;
-    }
-    .layanan-card .req ul li::before { content: '—'; color: var(--gold); }
-
-    /* ── STRUKTUR ── */
-    #struktur { background: var(--white); }
-    .org-chart {
-      margin-top: 50px;
-    }
-    .org-level {
-      display: flex; justify-content: center;
-      gap: 24px; margin-bottom: 0;
-      position: relative;
-    }
-    .org-level + .org-level { margin-top: 30px; }
-    .org-card {
-      background: var(--white);
-      border: 1.5px solid #e8e0d0;
-      border-radius: 8px; padding: 20px 24px;
-      text-align: center; min-width: 180px;
-      position: relative; transition: all 0.2s;
-    }
-    .org-card:hover {
-      border-color: var(--gold);
-      box-shadow: 0 6px 20px rgba(200,168,75,0.15);
-    }
-    .org-card.head {
-      background: var(--navy);
-      border-color: var(--gold);
-      min-width: 220px;
-    }
-    .org-card .org-photo {
-      width: 60px; height: 60px; border-radius: 50%;
-      background: linear-gradient(135deg, #e8e0d0, #c8b89a);
-      margin: 0 auto 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 24px;
-    }
-    .org-card.head .org-photo {
-      background: rgba(200,168,75,0.2);
-      border: 2px solid var(--gold);
-    }
-    .org-card h4 {
-      font-family: 'Playfair Display', serif;
-      font-size: 14px; font-weight: 700;
-    }
-    .org-card.head h4 { color: var(--white); }
-    .org-card:not(.head) h4 { color: var(--navy); }
-    .org-card span {
-      font-size: 12px; display: block; margin-top: 4px;
-    }
-    .org-card.head span { color: var(--gold); }
-    .org-card:not(.head) span { color: var(--gray); }
-    .org-connector {
-      display: flex; justify-content: center;
-      margin: 4px 0;
-    }
-    .org-connector::after {
-      content: '';
-      width: 2px; height: 26px;
-      background: var(--gold); opacity: 0.4;
-    }
-    .org-h-line {
-      height: 2px; background: var(--gold);
-      opacity: 0.3; margin: 0 auto;
-      width: 70%;
-    }
-
-    /* ── BERITA ── */
-    #berita { background: var(--light); }
-    .berita-grid {
-      display: grid; grid-template-columns: 2fr 1fr;
-      gap: 30px; margin-top: 50px;
-    }
-    .berita-featured {
-      background: var(--navy);
-      border-radius: 8px; overflow: hidden;
-      display: flex; flex-direction: column;
-    }
-    .berita-featured-img {
-      height: 220px;
-      background: linear-gradient(135deg, #1a3a6b, #0a1628);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 48px;
-    }
-    .berita-featured-body { padding: 32px; flex: 1; }
-    .berita-cat {
-      font-size: 11px; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--gold);
-      font-weight: 700; margin-bottom: 10px;
-    }
-    .berita-featured-body h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px; color: var(--white);
-      line-height: 1.4; margin-bottom: 12px;
-    }
-    .berita-featured-body p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; }
-    .berita-date { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 16px; }
-    .berita-list { display: flex; flex-direction: column; gap: 16px; }
-    .berita-item {
-      background: var(--white);
-      border: 1px solid #e8e0d0;
-      border-radius: 8px; padding: 24px;
-      transition: border-color 0.2s;
-    }
-    .berita-item:hover { border-color: var(--gold); }
-    .berita-item .berita-cat { color: var(--gold); }
-    .berita-item h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px; color: var(--navy);
-      line-height: 1.4; margin-bottom: 8px;
-    }
-    .berita-item p { font-size: 13px; color: var(--gray); line-height: 1.6; }
-    .berita-item .berita-date { font-size: 11px; color: #b0a898; margin-top: 10px; }
-
-    /* ── GALERI ── */
-    #galeri { background: var(--white); }
-    .galeri-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(2, 200px);
-      gap: 12px; margin-top: 50px;
-    }
-    .galeri-item {
-      border-radius: 6px; overflow: hidden;
-      position: relative; cursor: pointer;
-      background: var(--light);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .galeri-item:first-child {
-      grid-column: span 2; grid-row: span 2;
-    }
-    .galeri-item img {
-      width: 100%; height: 100%; object-fit: cover;
-      display: block;
-    }
-    .galeri-item-bg {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 8px;
-    }
-    .galeri-item-emoji { font-size: 36px; }
-    .galeri-item-label {
-      font-size: 12px; color: var(--navy);
-      opacity: 0.6; text-align: center;
-      font-weight: 600; text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .galeri-overlay {
-      position: absolute; inset: 0;
-      background: var(--navy); opacity: 0;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      gap: 8px; transition: opacity 0.3s;
-    }
-    .galeri-item:hover .galeri-overlay { opacity: 0.9; }
-    .galeri-overlay span {
-      font-family: 'Playfair Display', serif;
-      font-size: 15px; color: var(--white);
-      font-weight: 700; text-align: center; padding: 0 16px;
-    }
-    .galeri-overlay small { font-size: 12px; color: var(--gold); }
-
-    /* ── KONTAK ── */
-    #kontak { background: var(--navy); }
-    #kontak .section-title { color: var(--white); }
-    #kontak .section-sub { color: rgba(255,255,255,0.55); }
-    .kontak-wrap {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 60px; margin-top: 50px;
-    }
-    .kontak-info { }
-    .kontak-info-item {
-      display: flex; align-items: flex-start; gap: 16px;
-      margin-bottom: 28px;
-    }
-    .kontak-info-icon {
-      width: 44px; height: 44px; flex-shrink: 0;
-      background: rgba(200,168,75,0.12);
-      border: 1px solid rgba(200,168,75,0.3);
-      border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 18px;
-    }
-    .kontak-info-text h4 {
-      font-size: 13px; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 5px; font-weight: 700;
-    }
-    .kontak-info-text p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.5; }
-    .jam-operasional {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 8px; padding: 24px; margin-top: 30px;
-    }
-    .jam-operasional h4 {
-      font-size: 13px; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 16px; font-weight: 700;
-    }
-    .jam-row {
-      display: flex; justify-content: space-between;
-      padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
-      font-size: 14px;
-    }
-    .jam-row:last-child { border-bottom: none; }
-    .jam-row span:first-child { color: rgba(255,255,255,0.6); }
-    .jam-row span:last-child { color: var(--white); font-weight: 600; }
-    .kontak-form { }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .form-group { margin-bottom: 14px; }
-    .form-group label {
-      display: block; font-size: 12px;
-      color: rgba(255,255,255,0.5);
-      text-transform: uppercase; letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-    .form-group input, .form-group textarea, .form-group select {
-      width: 100%; padding: 13px 16px;
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 4px; color: var(--white);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 15px; transition: border-color 0.2s;
-    }
-    .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
-      outline: none; border-color: var(--gold);
-    }
-    .form-group textarea { resize: vertical; min-height: 120px; }
-    .form-group select option { background: var(--navy); }
-    .form-submit {
-      width: 100%; padding: 15px;
-      background: var(--gold); color: var(--navy);
-      border: none; border-radius: 4px;
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 14px; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase;
-      cursor: pointer; transition: all 0.2s;
-      margin-top: 6px;
-    }
-    .form-submit:hover { background: var(--gold-light); transform: translateY(-1px); }
-
-    /* ── FOOTER ── */
-    footer {
-      background: #06101f;
-      border-top: 1px solid rgba(200,168,75,0.2);
-      padding: 60px 80px 30px;
-    }
-    .footer-grid {
-      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 50px; margin-bottom: 50px;
-    }
-    .footer-brand h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 20px; color: var(--white);
-      margin-bottom: 12px;
-    }
-    .footer-brand p { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.7; }
-    .footer-socials {
-      display: flex; gap: 10px; margin-top: 20px;
-    }
-    .footer-social {
-      width: 36px; height: 36px;
-      background: rgba(255,255,255,0.07);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 15px; text-decoration: none;
-      transition: background 0.2s;
-    }
-    .footer-social:hover { background: var(--gold); }
-    .footer-col h4 {
-      font-size: 12px; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 16px; font-weight: 700;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col ul li { margin-bottom: 10px; }
-    .footer-col ul li a {
-      font-size: 13px; color: rgba(255,255,255,0.45);
-      text-decoration: none; transition: color 0.2s;
-    }
-    .footer-col ul li a:hover { color: var(--gold); }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.06);
-      padding-top: 24px;
-      display: flex; justify-content: space-between; align-items: center;
-    }
-    .footer-bottom p { font-size: 12px; color: rgba(255,255,255,0.3); }
-    .footer-bottom span { color: var(--gold); }
-
-    /* ── ANIMATIONS ── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .fade-in {
-      opacity: 0; transform: translateY(20px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-in.visible { opacity: 1; transform: none; }
-
-    /* ── RESPONSIVE ── */
-    @media (max-width: 1024px) {
-      section { padding: 80px 40px; }
-      nav { padding: 0 24px; }
-      .nav-links { display: none; }
-      .vm-grid { grid-template-columns: 1fr; }
-      .vm-card.visi { grid-column: 1; }
-      .sambutan-wrap { grid-template-columns: 1fr; }
-      .sambutan-photo-wrap { max-width: 320px; margin: 0 auto; }
-      .data-grid { grid-template-columns: repeat(2, 1fr); }
-      .layanan-grid { grid-template-columns: repeat(2, 1fr); }
-      .berita-grid { grid-template-columns: 1fr; }
-      .galeri-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
-      .galeri-item:first-child { grid-column: span 2; }
-      .kontak-wrap { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .hero { padding: 120px 40px 100px; }
-      .hero-stat { padding: 24px 30px; }
-    }
-    @media (max-width: 640px) {
-      section { padding: 60px 24px; }
-      .data-grid { grid-template-columns: repeat(2, 1fr); }
-      .layanan-grid { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .hero-stats { flex-wrap: wrap; }
-      .hero-stat { flex: 1 1 50%; border-right: none; border-top: 1px solid rgba(255,255,255,0.08); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KELURAHAN SUNGAI PUTRI - KECAMATAN DANAU SIPIN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#hero" class="nav-logo">
-    <img src="assets/img/lambang_jambi.png" alt="Lambang Kota Jambi" style="width: 42px; height: 42px; border-radius: 50%; object-fit: cover;">
-    <div class="nav-logo-text">
-      <strong>Kelurahan Sungai Putri</strong>
-      <span>Kota Jambi • Provinsi Jambi</span>
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-left">
+            <span><i class="fas fa-envelope" style="margin-right:4px"></i> sungaiputri655@gmail.com</span>
+            <span><i class="fas fa-phone" style="margin-right:4px"></i> (0851) 5653 0835</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
     </div>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#visi-misi">VISI DAN MISI</a></li>
-    <li><a href="#sambutan">Sambutan</a></li>
-    <li><a href="#data">Data Penduduk</a></li>
-    <li><a href="#layanan">Layanan</a></li>
-    <li><a href="#struktur">Struktur</a></li>
-    <li><a href="#berita">Berita</a></li>
-    <li><a href="#kontak">Kontak</a></li>
-  </ul>
-  <a href="#kontak" class="nav-cta">Hubungi Kami</a>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+    <div class="container">
+        <div class="header-logo">
+            <div class="logo-icon">SP</div>
+            <div class="logo-text">
+                <h1>KELURAHAN SUNGAI PUTRI</h1>
+                <h2>KECAMATAN DANAU SIPIN</h2>
+                <p>JAMBI - Provinsi JAMBI</p>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="header-search">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Cari informasi...">
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="container">
+        <ul class="nav-menu">
+            <li class="active"><a href="#"><i class="fas fa-home"></i> Beranda</a></li>
+            <li>
+                <a href="#">Profil <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#"><i class="fas fa-circle"></i> Sejarah Kelurahan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Visi & Misi</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Wilayah & Batas</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Data Demografis</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Potensi Kelurahan</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Pemerintahan <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#"><i class="fas fa-circle"></i> Lurah</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Sekretaris</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Kasi & Kaur</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Ketua RT / RW</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Layanan</a></li>
+            <li><a href="#">Berita</a></li>
+            <li><a href="#">Galeri</a></li>
+            <li>
+                <a href="#">Informasi <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown">
+                    <li><a href="#"><i class="fas fa-circle"></i> Pengumuman</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Agenda Kegiatan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Download</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> FAQ</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Kontak</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+    </div>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-decor"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Kecamatan Danau Sipin — Kota Jambi</div>
-    <h1>Kelurahan<br><em>Sungai Putri</em></h1>
-    <p>Melayani masyarakat dengan profesional, transparan, dan berintegritas demi mewujudkan Kelurahan Sungai Putri yang maju, mandiri, dan sejahtera.</p>
-    <div class="hero-buttons">
-      <a href="#layanan" class="btn-primary">Lihat Layanan</a>
-      <a href="#sambutan" class="btn-outline">Sambutan Lurah</a>
-    </div>
-  </div>
-</section>
-
-<!-- VISI MISI -->
-<section id="visi-misi">
-  <div class="section-header fade-in">
-    <div class="section-tag">Identitas Kelurahan</div>
-    <h2 class="section-title">VISI DAN MISI</h2>
-    <div class="divider"></div>
-    <p class="section-sub">.</p>
-  </div>
-  <div class="vm-grid fade-in">
-    <div class="vm-card visi">
-      <div class="vm-card-label">VISI</div>
-      <h3>Mewujudkan Kota Perdagangan dan Jasa yang Bersih, Aman, Harmonis, Agamis, Inovatif, dan Sejahtera</h3>
-    </div>
-    <div class="vm-card">
-      <div class="vm-card-label">Misi Pembangunan</div>
-      <h3>Lima Misi Utama Pembangunan Kota Jambi</h3>
-      <ul class="misi-list" style="margin-top: 16px;">
-        <li><div class="misi-num">1</div>Penguatan pengelolaan infrastruktur dan lingkungan hidup yang merata, berkualitas, dan berkelanjutan.</li>
-        <li><div class="misi-num">2</div>Penguatan ketertiban dan ketentraman lingkungan serta partisipasi masyarakat dalam pembangunan.</li>
-        <li><div class="misi-num">3</div>Penguatan kapasitas ekonomi perkantoran dan pemberdayaan UMKM lokal.</li>
-        <li><div class="misi-num">4</div>Penguatan kualitas sumber daya manusia melalui pendidikan dan pelatihan.</li>
-        <li><div class="misi-num">5</div>Penguatan tata kelola pemerintahan yang baik, bersih, dan transparan.</li>
-      </ul>
-    </div>
-    <div class="vm-card">
-      <div class="vm-card-label">Nilai-Nilai Kelurahan</div>
-      <h3>Komitmen Kami kepada Masyarakat</h3>
-      <p style="margin-top: 12px;">Kelurahan Sungai Putri berkomitmen untuk memberikan pelayanan terbaik dengan menjunjung tinggi nilai profesionalisme, integritas, transparansi, dan keberpihakan kepada masyarakat. Setiap program dirancang untuk meningkatkan kualitas hidup seluruh warga.</p>
-    </div>
-  </div>
-</section>
-
-<!-- SAMBUTAN -->
-<section id="sambutan">
-  <div class="sambutan-wrap">
-    <div class="sambutan-photo-wrap fade-in">
-      <img src="assets/img/kepala_kelurahan.png" alt="Foto Kepala Kelurahan" style="width: 100%; height: auto; border-radius: 8px; max-width: 300px;">
-      <div class="sambutan-badge">
-        <div class="sambutan-badge-title">LURAH SUNGAI PUTRI</div>
-        <div class="sambutan-badge-name">SUANDI,A.Md</div>
-        <div class="sambutan-badge-role"></div>
-      </div>
-    </div>
-    <div class="sambutan-content fade-in">
-      <div class="section-tag">Sambutan Resmi</div>
-      <h2 class="section-title">Sambutan Kepala Kelurahan Sungai Putri</h2>
-      <div class="divider"></div>
-      <div class="sambutan-greeting">Assalamu'alaikum Warahmatullahi Wabarakatuh</div>
-      <p class="sambutan-text lead">Yang kami hormati, para tokoh masyarakat, perangkat kelurahan, pemuda, ibu-ibu PKK, serta seluruh warga Kelurahan Sungai Putri yang kami cintai dan banggakan.</p>
-      <p class="sambutan-text">Pertama-tama marilah kita panjatkan puji syukur ke hadirat Allah SWT, karena atas rahmat dan karunia-Nya kita dapat meluncurkan website Kelurahan Sungai Putri sebagai wujud nyata langkah kita menuju digitalisasi kelurahan.</p>
-      <p class="sambutan-text">Perkembangan teknologi informasi saat ini menuntut kita untuk bergerak maju. Kelurahan tidak boleh tertinggal. Website kelurahan ini adalah jendela digital yang akan membuka akses informasi, pelayanan, dan transparansi bagi seluruh masyarakat.</p>
-      <p class="sambutan-text">Melalui website ini, warga dapat dengan mudah mengetahui program kelurahan, berita kegiatan, laporan pembangunan, hingga layanan administrasi tanpa harus selalu datang ke kantor kelurahan.</p>
-      <div class="sambutan-goals">
-        <h4>Harapan Kami</h4>
-        <ul>
-          <li>Informasi kelurahan dapat diakses kapan saja dan di mana saja.</li>
-          <li>Warga lebih mudah menyampaikan aspirasi dan mendapatkan layanan.</li>
-          <li>Generasi muda kelurahan semakin melek digital dan ikut berperan dalam pembangunan.</li>
-          <li>Kelurahan kita semakin dikenal luas, baik di tingkat kota maupun nasional.</li>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-panel">
+        <div class="mobile-menu-header">
+            <span>Menu Utama</span>
+            <button class="mobile-menu-close" id="mobileClose"><i class="fas fa-times"></i></button>
+        </div>
+        <ul class="mobile-nav">
+            <li><a href="#" class="mobile-link"><span>Beranda</span></a></li>
+            <li>
+                <a href="#" class="mobile-link" data-toggle="mob-drop-1"><span>Profil</span> <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown" id="mob-drop-1">
+                    <li><a href="#"><i class="fas fa-circle"></i> Sejarah Kelurahan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Visi & Misi</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Wilayah & Batas</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Data Demografis</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#" class="mobile-link" data-toggle="mob-drop-2"><span>Pemerintahan</span> <i class="fas fa-chevron-down"></i></a>
+                <ul class="mobile-dropdown" id="mob-drop-2">
+                    <li><a href="#"><i class="fas fa-circle"></i> Lurah</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Sekretaris</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Kasi & Kaur</a></li>
+                </ul>
+            </li>
+            <li><a href="#" class="mobile-link"><span>Layanan</span></a></li>
+            <li><a href="#" class="mobile-link"><span>Berita</span></a></li>
+            <li><a href="#" class="mobile-link"><span>Galeri</span></a></li>
+            <li><a href="#" class="mobile-link"><span>Kontak</span></a></li>
         </ul>
-      </div>
-      <div class="sambutan-sign">
-        <p>Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
-        <strong></strong>
-      </div>
     </div>
-  </div>
+</div>
+
+<!-- HERO SLIDER -->
+<section class="hero">
+    <div class="hero-slides" id="heroSlides">
+        <div class="hero-slide" style="background-image:url('https://picsum.photos/seed/sungaiputri1/1400/500.jpg')">
+            <div class="hero-slide-content">
+                <div class="container">
+                    <div class="badge"><i class="fas fa-star"></i> Selamat Datang</div>
+                    <h2>KELURAHAN SUNGAI PUTRI</h2>
+                    <p>MEWUJUDKAN KOTA PERDAGANGAN DAN JASA YANG BERSIH,AMAN,HARMONIS,AGAMIS,INOVATIF, DAN SEJAHTERA</p>
+                    <a href="#" class="hero-btn">Jelajahi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slide" style="background-image:url('https://picsum.photos/seed/sungaiputri2/1400/500.jpg')">
+            <div class="hero-slide-content">
+                <div class="container">
+                    <div class="badge"><i class="fas fa-bullhorn"></i> Pengumuman</div>
+                    <h2>Pelayanan KTP Elektronik</h2>
+                    <p>Pelayanan pembuatan dan perpanjangan KTP-el kini tersedia di Kantor Kelurahan Sungai Putri. Datang dengan membawa berkas persyaratan lengkap.</p>
+                    <a href="#" class="hero-btn">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="hero-slide" style="background-image:url('https://picsum.photos/seed/sungaiputri3/1400/500.jpg')">
+            <div class="hero-slide-content">
+                <div class="container">
+                    <div class="badge"><i class="fas fa-calendar-alt"></i> Kegiatan</div>
+                    <h2>Musrenbang Kelurahan 2025</h2>
+                    <p>Partisipasi masyarakat dalam perencanaan pembangunan kelurahan tahun 2025. Mari bersama-sama membangun Sungai Putri yang lebih baik.</p>
+                    <a href="#" class="hero-btn">Info Kegiatan <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="hero-nav prev" id="heroPrev"><i class="fas fa-chevron-left"></i></button>
+    <button class="hero-nav next" id="heroNext"><i class="fas fa-chevron-right"></i></button>
+    <div class="hero-dots" id="heroDots">
+        <div class="hero-dot active" data-slide="0"></div>
+        <div class="hero-dot" data-slide="1"></div>
+        <div class="hero-dot" data-slide="2"></div>
+    </div>
+</section>
+
+<!-- QUICK STATS -->
+<section class="quick-stats">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item fade-up">
+                <div class="stat-icon red"><i class="fas fa-users"></i></div>
+                <div class="stat-number" data-target="12847">0</div>
+                <div class="stat-label">Penduduk</div>
+            </div>
+            <div class="stat-item fade-up d1">
+                <div class="stat-icon blue"><i class="fas fa-home"></i></div>
+                <div class="stat-number" data-target="3856">0</div>
+                <div class="stat-label">Kepala Keluarga</div>
+            </div>
+            <div class="stat-item fade-up d2">
+                <div class="stat-icon gold"><i class="fas fa-map-marked-alt"></i></div>
+                <div class="stat-number" data-target="26">0</div>
+                <div class="stat-label">RT / RW</div>
+            </div>
+            <div class="stat-item fade-up d3">
+                <div class="stat-icon green"><i class="fas fa-expand-arrows-alt"></i></div>
+                <div class="stat-number" data-target="325">0</div>
+                <div class="stat-label">Luas (Ha)</div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- LAYANAN -->
-<section id="layanan">
-  <div class="section-header fade-in">
-    <div class="section-tag">Pelayanan Publik</div>
-    <h2 class="section-title">Layanan Kelurahan</h2>
-    <div class="divider"></div>
-    <p class="section-sub">Berbagai layanan administrasi dan sosial yang disediakan Kelurahan Sungai Putri untuk memenuhi kebutuhan seluruh warga.</p>
-  </div>
-  <div class="layanan-grid fade-in" style="display:flex; justify-content:center;">
-    <img src="assets/img/layanan-kelurahan.png" alt="Layanan Kelurahan Sungai Putri" style="max-width:100%; width:100%; height:auto; border-radius: 12px; box-shadow: 0 18px 40px rgba(0,0,0,0.12);">
-  </div>
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="overline">Layanan Kami</div>
+            <h2>Layanan Publik Kelurahan</h2>
+            <p>Berbagai layanan administrasi kependudukan dan perizinan yang tersedia untuk masyarakat</p>
+        </div>
+        <div class="layanan-grid">
+            <a href="#" class="layanan-card fade-up">
+                <div class="layanan-icon l1"><i class="fas fa-id-card"></i></div>
+                <h3>KTP & KK</h3>
+                <p>Pembuatan dan perpanjangan KTP-el serta Kartu Keluarga</p>
+            </a>
+            <a href="#" class="layanan-card fade-up d1">
+                <div class="layanan-icon l2"><i class="fas fa-file-signature"></i></div>
+                <h3>Surat Pengantar</h3>
+                <p>Surat keterangan domisili, usaha, tidak mampu, dan lainnya</p>
+            </a>
+            <a href="#" class="layanan-card fade-up d2">
+                <div class="layanan-icon l3"><i class="fas fa-baby"></i></div>
+                <h3>Akta & Kelahiran</h3>
+                <p>Pelayanan pembuatan akta kelahiran dan kematian</p>
+            </a>
+            <a href="#" class="layanan-card fade-up d3">
+                <div class="layanan-icon l4"><i class="fas fa-building"></i></div>
+                <h3>Perizinan</h3>
+                <p>Izin usaha mikro, surat keterangan RT/RW, dan perizinan lain</p>
+            </a>
+        </div>
+    </div>
 </section>
 
-<!-- STRUKTUR -->
-<section id="struktur">
-  <div class="section-header fade-in" style="text-align: center;">
-    <div class="section-tag">Organisasi</div>
-    <h2 class="section-title">Struktur Organisasi</h2>
-    <div class="divider" style="margin: 16px auto 20px;"></div>
-    <p class="section-sub" style="margin: 0 auto;">Struktur Organisasi dan Tata Kerja Kelurahan Sungai Putri, Kecamatan Danau Sipin, Kota Jambi.</p>
-  </div>
-  <div class="org-chart fade-in">
-    <div class="org-level">
-      <div class="org-card head">
-        <img src="assets/img/kepala_kelurahan.png" alt="Foto Lurah" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--gold);">
-        <h4>SUANDI,A.Md</h4>
-        <span>Kepala Kelurahan Sungai Putri</span>
-      </div>
+<!-- PERSYARATAN LAYANAN -->
+<section class="persyaratan-section" id="persyaratan">
+    <div class="container">
+        <div class="persyaratan-title-bar fade-up">
+            <div class="section-header" style="margin-bottom:0">
+                <div class="overline">Kelengkapan Berkas</div>
+                <h2>Syarat-syarat Administrasi Kependudukan</h2>
+                <p>Kelurahan Sungai Putri Kecamatan Danau Sipin — Berikut daftar persyaratan dokumen untuk setiap jenis layanan</p>
+            </div>
+        </div>
+
+        <div class="syarat-grid">
+
+            <!-- 1. PENGANTAR NIKAH N1 (BIRU) -->
+            <div class="syarat-card syarat-blue fade-up">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-ring"></i></div>
+                    <h3>Pengantar Nikah (N1)</h3>
+                    <span class="syarat-badge">10 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">1</span> Pengantar RT</li>
+                        <li><span class="item-num">2</span> FC KTP</li>
+                        <li><span class="item-num">3</span> FC KK</li>
+                        <li><span class="item-num">4</span> FC Akta Kelahiran</li>
+                        <li><span class="item-num">5</span> FC Ijazah</li>
+                        <li><span class="item-num">6</span> PBB Lunas</li>
+                        <li><span class="item-num">7</span> Data Orang Tua (jika beda KK)</li>
+                        <li><span class="item-num">8</span> Akta Kematian (cerai mati)</li>
+                        <li><span class="item-num">9</span> Akta Cerai (cerai hidup)</li>
+                        <li><span class="item-num">10</span> Foto 3x4 4 lembar latar biru</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 2. SK PBB (KUNING) -->
+            <div class="syarat-card syarat-yellow fade-up d1">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+                    <h3>Surat Keterangan PBB</h3>
+                    <span class="syarat-badge">4 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">1</span> Pengantar RT</li>
+                        <li><span class="item-num">2</span> FC KK</li>
+                        <li><span class="item-num">3</span> FC Sertifikat</li>
+                        <li><span class="item-num">4</span> PBB Tetangga / PBB Lama</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 3. SK KEMATIAN (ORANYE) -->
+            <div class="syarat-card syarat-orange fade-up d2">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-pray"></i></div>
+                    <h3>Surat Keterangan Kematian</h3>
+                    <span class="syarat-badge">5 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">1</span> Pengantar RT</li>
+                        <li><span class="item-num">2</span> FC KTP Pelapor</li>
+                        <li><span class="item-num">3</span> FC KTP Alm</li>
+                        <li><span class="item-num">4</span> FC KK Alm</li>
+                        <li><span class="item-num">5</span> PBB Lunas Tahun Berjalan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 4. SK JANDA / DUDA (TEAL) -->
+            <div class="syarat-card syarat-teal fade-up">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-heart-broken"></i></div>
+                    <h3>SK Janda / Duda</h3>
+                    <span class="syarat-badge">5 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">A</span> Pengantar RT</li>
+                        <li><span class="item-num">B</span> FC KTP</li>
+                        <li><span class="item-num">C</span> FC KK</li>
+                        <li><span class="item-num">D</span> FC Surat Kematian Suami / Istri</li>
+                        <li><span class="item-num">E</span> PBB Lunas Tahun Berjalan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 5. PERNYATAAN AHLI WARIS (UNGU) -->
+            <div class="syarat-card syarat-purple fade-up d1">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-users"></i></div>
+                    <h3>Pernyataan Ahli Waris</h3>
+                    <span class="syarat-badge">8 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">1</span> Akta Kematian</li>
+                        <li><span class="item-num">2</span> FC KTP Ahli Waris</li>
+                        <li><span class="item-num">3</span> FC KK Ahli Waris</li>
+                        <li><span class="item-num">4</span> FC Akta Kelahiran Ahli Waris</li>
+                        <li><span class="item-num">5</span> PBB Lunas Tahun Berjalan</li>
+                        <li><span class="item-num">6</span> Buku Nikah Alm</li>
+                        <li><span class="item-num">7</span> FC KTP Saksi 2 Orang Tetangga</li>
+                        <li><span class="item-num">8</span> Materai Rp.10.000</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 6. SK DOMISILI (MERAH) -->
+            <div class="syarat-card syarat-red fade-up d2">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>SK Domisili</h3>
+                    <span class="syarat-badge">4 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">1</span> Pengantar RT</li>
+                        <li><span class="item-num">2</span> FC KTP</li>
+                        <li><span class="item-num">3</span> FC KK</li>
+                        <li><span class="item-num">4</span> PBB Tetangga / PBB Lama</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 7. SK BEDA NAMA (HIJAU) -->
+            <div class="syarat-card syarat-green fade-up">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-exchange-alt"></i></div>
+                    <h3>SK Beda Nama</h3>
+                    <span class="syarat-badge">5 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">1</span> Pengantar RT</li>
+                        <li><span class="item-num">2</span> FC KTP</li>
+                        <li><span class="item-num">3</span> FC KK</li>
+                        <li><span class="item-num">4</span> FC Berkas yang Berbeda Nama</li>
+                        <li><span class="item-num">5</span> PBB Lunas Tahun Berjalan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 8. SK USAHA PLUT (NAVY) -->
+            <div class="syarat-card syarat-navy fade-up d1">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-store"></i></div>
+                    <h3>SK Usaha (Pengajuan ke PLUT)</h3>
+                    <span class="syarat-badge">7 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">A</span> Pengantar RT</li>
+                        <li><span class="item-num">B</span> FC KTP</li>
+                        <li><span class="item-num">C</span> FC KK</li>
+                        <li><span class="item-num">D</span> PBB Lunas Tahun Berjalan</li>
+                        <li><span class="item-num">E</span> Photo Usaha</li>
+                        <li><span class="item-num">F</span> Pas Photo Pemilik Usaha (ukuran 3x4)</li>
+                        <li><span class="item-num">G</span> Map Kuning & Hijau</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 9. SKTM (PINK) -->
+            <div class="syarat-card syarat-pink fade-up d2">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>SKTM</h3>
+                    <span class="syarat-badge">4 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">1</span> Pengantar RT</li>
+                        <li><span class="item-num">2</span> FC KK (Pekerja Buruh Harian Lepas)</li>
+                        <li><span class="item-num">3</span> FC KTP Orang Tua</li>
+                        <li><span class="item-num">4</span> FC Akta Kelahiran Anak</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 10. SK BELUM MEMILIKI RUMAH (BIRU) -->
+            <div class="syarat-card syarat-blue fade-up">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-home"></i></div>
+                    <h3>SK Belum Memiliki Rumah</h3>
+                    <span class="syarat-badge">4 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">1</span> Pengantar RT</li>
+                        <li><span class="item-num">2</span> FC KTP</li>
+                        <li><span class="item-num">3</span> FC KK</li>
+                        <li><span class="item-num">4</span> PBB Lunas Tahun Berjalan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 11. SK BELUM MENIKAH (KUNING) -->
+            <div class="syarat-card syarat-yellow fade-up d1">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-user-check"></i></div>
+                    <h3>SK Belum Menikah</h3>
+                    <span class="syarat-badge">4 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">1</span> Pengantar RT</li>
+                        <li><span class="item-num">2</span> FC KTP</li>
+                        <li><span class="item-num">3</span> FC KK</li>
+                        <li><span class="item-num">4</span> PBB Lunas Tahun Berjalan</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 12. SK BERSIH DIRI (ORANYE) -->
+            <div class="syarat-card syarat-orange fade-up d2">
+                <div class="syarat-card-header">
+                    <div class="syarat-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>SK Bersih Diri</h3>
+                    <span class="syarat-badge">8 Berkas</span>
+                </div>
+                <div class="syarat-card-body">
+                    <ul>
+                        <li><span class="item-num">A</span> Pengantar RT</li>
+                        <li><span class="item-num">B</span> FC KTP</li>
+                        <li><span class="item-num">C</span> FC KK</li>
+                        <li><span class="item-num">D</span> FC Berkas yang Berbeda Nama</li>
+                        <li><span class="item-num">E</span> PBB Lunas Tahun Berjalan</li>
+                        <li><span class="item-num">F</span> Photo 1 Lembar Latar Merah</li>
+                        <li><span class="item-num">G</span> Photo Ayah Ibu 2 Lembar</li>
+                        <li><span class="item-num">H</span> Photo Kakek Nenek 1 Lembar (Jika Masih Ada) Uk. 3x4</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Catatan -->
+        <div class="syarat-note fade-up">
+            <i class="fas fa-exclamation-triangle"></i>
+            <div>
+                <h4>Penting: Perhatikan Kelengkapan Berkas</h4>
+                <p>Seluruh fotokopi (FC) wajib dibawa minimal 2 rangkap dan dalam keadaan masih berlaku. Dokumen asli juga harus dibawa untuk verifikasi. Pastikan surat pengantar RT sudah dibubuhi tanda tangan dan stempel yang sah. Untuk informasi lebih lanjut, silakan hubungi Kantor Kelurahan Sungai Putri.</p>
+            </div>
+        </div>
+
+        <!-- Download Button -->
+        <div class="syarat-download fade-up">
+            <a href="#" class="btn-download">
+                <i class="fas fa-file-download"></i> Download Daftar Persyaratan (PDF)
+            </a>
+        </div>
     </div>
-    <div class="org-connector"></div>
-    <div class="org-level">
-      <div class="org-card">
-        <div class="org-photo">📝</div>
-        <h4>Seklur</h4>
-        <span>Sekretaris Kelurahan</span>
-      </div>
+</section>
+
+<!-- BERITA & PENGUMUMAN -->
+<section class="section">
+    <div class="container">
+        <div class="content-layout">
+            <div>
+                <div class="section-header" style="text-align:left; margin-bottom:24px;">
+                    <div class="overline" style="justify-content:flex-start;">
+                        <span></span>Berita Terkini<span></span>
+                    </div>
+                    <h2 style="font-size:1.4rem;">Informasi & Berita</h2>
+                </div>
+                <div class="berita-grid" style="grid-template-columns: 1fr;">
+                    <div class="berita-card fade-up">
+                        <div class="berita-img" style="background-image:url('https://picsum.photos/seed/berita1/600/300.jpg')">
+                            <span class="badge-cat">Kegiatan</span>
+                        </div>
+                        <div class="berita-body">
+                            <div class="berita-meta">
+                                <span><i class="fas fa-calendar"></i> 15 Jan 2025</span>
+                                <span><i class="fas fa-user"></i> Admin</span>
+                            </div>
+                            <h3><a href="#">Gotong Royong Bersihkan Sungai Putri, Warga Antusias Ikut Serta</a></h3>
+                            <p>Kegiatan gotong royong membersihkan sungai dan lingkungan sekitar diikuti oleh ratusan warga dari berbagai RT.</p>
+                        </div>
+                        <div class="berita-footer">
+                            <a href="#">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                            <span style="font-size:0.7rem;color:var(--gray-400)"><i class="fas fa-eye"></i> 234</span>
+                        </div>
+                    </div>
+                    <div class="berita-card fade-up d1">
+                        <div class="berita-img" style="background-image:url('https://picsum.photos/seed/berita2/600/300.jpg')">
+                            <span class="badge-cat">Pembangunan</span>
+                        </div>
+                        <div class="berita-body">
+                            <div class="berita-meta">
+                                <span><i class="fas fa-calendar"></i> 10 Jan 2025</span>
+                                <span><i class="fas fa-user"></i> Admin</span>
+                            </div>
+                            <h3><a href="#">Pembangunan Jalan Lingkungan RT 05 Rampung, Warga Merasa Terbantu</a></h3>
+                            <p>Proyek perbaikan jalan lingkungan sepanjang 250 meter di RT 05 telah selesai dikerjakan menggunakan Dana Desa.</p>
+                        </div>
+                        <div class="berita-footer">
+                            <a href="#">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                            <span style="font-size:0.7rem;color:var(--gray-400)"><i class="fas fa-eye"></i> 189</span>
+                        </div>
+                    </div>
+                    <div class="berita-card fade-up d2">
+                        <div class="berita-img" style="background-image:url('https://picsum.photos/seed/berita3/600/300.jpg')">
+                            <span class="badge-cat">Sosial</span>
+                        </div>
+                        <div class="berita-body">
+                            <div class="berita-meta">
+                                <span><i class="fas fa-calendar"></i> 05 Jan 2025</span>
+                                <span><i class="fas fa-user"></i> Admin</span>
+                            </div>
+                            <h3><a href="#">Kelurahan Sungai Putri Salurkan Bantuan PKH Kepada 150 KPM</a></h3>
+                            <p>Penyaluran bantuan Program Keluarga Harapan (PKH) tahap IV berjalan lancar dan tertib di aula kantor kelurahan.</p>
+                        </div>
+                        <div class="berita-footer">
+                            <a href="#">Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                            <span style="font-size:0.7rem;color:var(--gray-400)"><i class="fas fa-eye"></i> 312</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="sidebar-widget fade-up">
+                    <div class="widget-header"><i class="fas fa-bullhorn"></i> Pengumuman</div>
+                    <div class="widget-body" style="padding:0">
+                        <a href="#" class="pengumuman-item">
+                            <div class="pengumuman-date"><span class="day">20</span><span class="month">Jan</span></div>
+                            <div><h4>Jadwal Pelayanan KTP Keliling Bulan Februari</h4><div class="peng-cat">Pengumuman</div></div>
+                        </a>
+                        <a href="#" class="pengumuman-item">
+                            <div class="pengumuman-date"><span class="day">15</span><span class="month">Jan</span></div>
+                            <div><h4>Pendaftaran Bantuan UMKM Tahap 2</h4><div class="peng-cat">Bantuan</div></div>
+                        </a>
+                        <a href="#" class="pengumuman-item">
+                            <div class="pengumuman-date"><span class="day">10</span><span class="month">Jan</span></div>
+                            <div><h4>Imunisasi Gratis Balita di Posyandu</h4><div class="peng-cat">Kesehatan</div></div>
+                        </a>
+                        <a href="#" class="pengumuman-item">
+                            <div class="pengumuman-date"><span class="day">05</span><span class="month">Jan</span></div>
+                            <div><h4>Pengambilan KTP-el yang Sudah Jadi</h4><div class="peng-cat">Kependudukan</div></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="sidebar-widget fade-up d1">
+                    <div class="widget-header"><i class="fas fa-user-tie"></i> Profil Lurah</div>
+                    <div class="widget-body">
+                        <div class="lurah-profile">
+                            <div class="lurah-photo"><i class="fas fa-user"></i></div>
+                            <h4>H. Ahmad Fauzi, S.Sos</h4>
+                            <div class="jabatan">Lurah Sungai Putri</div>
+                            <p>"Mewujudkan Kelurahan Sungai Putri yang maju, mandiri, dan sejahtera melalui pelayanan prima kepada masyarakat."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-widget fade-up d2">
+                    <div class="widget-header"><i class="fas fa-link"></i> Link Penting</div>
+                    <div class="widget-body">
+                        <ul class="widget-link-list">
+                            <li><a href="#"><i class="fas fa-circle"></i> Pemerintah Kota Jambi</a></li>
+                            <li><a href="#"><i class="fas fa-circle"></i> Kecamatan Danau Sipin</a></li>
+                            <li><a href="#"><i class="fas fa-circle"></i> Disdukcapil Kota Jambi</a></li>
+                            <li><a href="#"><i class="fas fa-circle"></i> DPMPTSP Kota Jambi</a></li>
+                            <li><a href="#"><i class="fas fa-circle"></i> Pemprov Jambi</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="org-connector"></div>
-    <div class="org-h-line"></div>
-    <div class="org-level" style="margin-top: 0;">
-      <div class="org-card">
-        <div class="org-photo">🛡️</div>
-        <h4>Kasi Trantib</h4>
-        <span>Kepala Seksi Ketertiban & Ketenteraman</span>
-      </div>
-      <div class="org-card">
-        <div class="org-photo">🤝</div>
-        <h4>Kasi PMKS</h4>
-        <span>Kepala Seksi Pemberdayaan Masyarakat & Kesejahteraan Sosial</span>
-      </div>
-      <div class="org-card">
-        <div class="org-photo">🏗️</div>
-        <h4>Kasi Pem</h4>
-        <span>Kepala Seksi Pemerintahan Ekonomi dan Pembangunan</span>
-      </div>
+</section>
+
+<!-- VISI MISI -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="overline">Profil</div>
+            <h2>Visi & Misi</h2>
+            <p>Arah kebijakan dan tujuan pembangunan Kelurahan Sungai Putri</p>
+        </div>
+        <div class="visi-misi-grid">
+            <div class="vm-card visi fade-up">
+                <h3><i class="fas fa-eye"></i> Visi</h3>
+                <p>"Terwujudnya Kelurahan Sungai Putri yang Maju, Sejahtera, Religius, dan Berbudaya melalui Pelayanan Prima dan Tata Kelola Pemerintahan yang Transparan."</p>
+            </div>
+            <div class="vm-card misi fade-up d1">
+                <h3><i class="fas fa-bullseye"></i> Misi</h3>
+                <ul class="misi-list">
+                    <li><i class="fas fa-check-circle"></i> Meningkatkan kualitas pelayanan publik yang cepat, tepat, dan ramah kepada masyarakat.</li>
+                    <li><i class="fas fa-check-circle"></i> Mendorong pembangunan infrastruktur yang merata dan berkualitas di seluruh wilayah kelurahan.</li>
+                    <li><i class="fas fa-check-circle"></i> Meningkatkan kualitas sumber daya manusia melalui pendidikan, kesehatan, dan pelatihan keterampilan.</li>
+                    <li><i class="fas fa-check-circle"></i> Memperkuat kehidupan bermasyarakat yang religius, toleran, dan menjunjung tinggi nilai-nilai budaya lokal.</li>
+                    <li><i class="fas fa-check-circle"></i> Mewujudkan tata kelola pemerintahan kelurahan yang bersih, transparan, dan akuntabel.</li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="org-connector"></div>
-    <div class="org-level">
-      <div class="org-card">
-        <div class="org-photo">👷</div>
-        <h4>Staf Kelurahan</h4>
-        <span>Pelaksana Administrasi & Pelayanan</span>
-      </div>
+</section>
+
+<!-- PEMERINTAH KELURAHAN -->
+<section class="section">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="overline">Struktur</div>
+            <h2>Pemerintah Kelurahan</h2>
+            <p>Aparatur pemerintah Kelurahan Sungai Putri yang melayani masyarakat</p>
+        </div>
+        <div class="pemerintah-grid">
+            <div class="pemerintah-card leader fade-up">
+                <div class="pemerintah-photo"><i class="fas fa-user"></i></div>
+                <h4>H. Ahmad Fauzi, S.Sos</h4>
+                <div class="jabatan">Lurah</div>
+            </div>
+            <div class="pemerintah-card fade-up d1">
+                <div class="pemerintah-photo"><i class="fas fa-user"></i></div>
+                <h4>Muhammad Rizki, S.AP</h4>
+                <div class="jabatan">Sekretaris Kelurahan</div>
+            </div>
+            <div class="pemerintah-card fade-up d2">
+                <div class="pemerintah-photo"><i class="fas fa-user"></i></div>
+                <h4>Siti Aminah</h4>
+                <div class="jabatan">Kasi Pemerintahan</div>
+            </div>
+            <div class="pemerintah-card fade-up d3">
+                <div class="pemerintah-photo"><i class="fas fa-user"></i></div>
+                <h4>Bambang Setiawan</h4>
+                <div class="jabatan">Kasi Kesejahteraan</div>
+            </div>
+            <div class="pemerintah-card fade-up d4">
+                <div class="pemerintah-photo"><i class="fas fa-user"></i></div>
+                <h4>Dewi Rahmawati</h4>
+                <div class="jabatan">Kaur Keuangan</div>
+            </div>
+        </div>
     </div>
-  </div>
+</section>
+
+<!-- GALERI -->
+<section class="section section-alt">
+    <div class="container">
+        <div class="section-header fade-up">
+            <div class="overline">Dokumentasi</div>
+            <h2>Galeri Kegiatan</h2>
+            <p>Dokumentasi kegiatan dan suasana Kelurahan Sungai Putri</p>
+        </div>
+        <div class="galeri-grid">
+            <div class="galeri-item fade-up">
+                <img src="https://picsum.photos/seed/galeri1/600/700.jpg" alt="Galeri">
+                <div class="galeri-overlay"><span>Musrenbang 2025</span></div>
+            </div>
+            <div class="galeri-item fade-up d1">
+                <img src="https://picsum.photos/seed/galeri2/400/300.jpg" alt="Galeri">
+                <div class="galeri-overlay"><span>Gotong Royong</span></div>
+            </div>
+            <div class="galeri-item fade-up d2">
+                <img src="https://picsum.photos/seed/galeri3/400/300.jpg" alt="Galeri">
+                <div class="galeri-overlay"><span>Posyandu Balita</span></div>
+            </div>
+            <div class="galeri-item fade-up d3">
+                <img src="https://picsum.photos/seed/galeri4/400/300.jpg" alt="Galeri">
+                <div class="galeri-overlay"><span>Peresmian Jalan</span></div>
+            </div>
+            <div class="galeri-item fade-up d1">
+                <img src="https://picsum.photos/seed/galeri5/400/300.jpg" alt="Galeri">
+                <div class="galeri-overlay"><span>Lomba 17 Agustus</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+    <div class="container">
+        <div class="cta-content fade-up">
+            <h2>Butuh Layanan Administrasi?</h2>
+            <p>Silakan datang ke Kantor Kelurahan Sungai Putri dengan membawa berkas persyaratan yang lengkap. Kami siap melayani Anda.</p>
+            <div class="cta-btns">
+                <a href="#persyaratan" class="btn-white"><i class="fas fa-list-check"></i> Lihat Persyaratan</a>
+                <a href="#" class="btn-outline-white"><i class="fas fa-phone"></i> Hubungi Kami</a>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-bottom">
-    <p>© 2026 <span>Kelurahan Sungai Putri</span> — Kecamatan Danau Sipin, Kota Jambi. Hak Cipta Dilindungi.</p>
-    <p>Dikelola oleh <span>Pemerintah Kelurahan Sungai Putri</span></p>
-  </div>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo-sm">
+                    <div class="icon-sm">SP</div>
+                    <span>Kelurahan Sungai Putri</span>
+                </div>
+                <p>Kantor Kelurahan Sungai Putri melayani masyarakat dengan sepenuh hati. Berkomitmen untuk memberikan pelayanan terbaik dalam administrasi kependudukan dan pembangunan kelurahan.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Menu Utama</h4>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-circle"></i> Beranda</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Profil Kelurahan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Pemerintahan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Layanan Publik</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Berita & Artikel</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Galeri Kegiatan</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Layanan</h4>
+                <ul class="footer-links">
+                    <li><a href="#persyaratan"><i class="fas fa-circle"></i> Persyaratan Layanan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> KTP Elektronik</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Kartu Keluarga</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Surat Keterangan</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> Akta Kelahiran</a></li>
+                    <li><a href="#"><i class="fas fa-circle"></i> SK Bersih Diri</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Kontak Kami</h4>
+                <ul class="footer-links footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i><span>Jl. Sungai Putri, Kec. Danau Sipin, Kota Jambi, Provinsi Jambi</span></li>
+                    <li><i class="fas fa-phone"></i><span>(0851) 5653 0835</span></li>
+                    <li><i class="fas fa-envelope"></i><span>sungaiputri655@gmail.com</span></li>
+                    <li><i class="fas fa-clock"></i><span>Senin - Jumat: 08.00 - 15.00 WIB</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2026 KELURAHAN SUNGAI PUTRI - KECAMATAN DANAU SIPIN. Hak Cipta Dilindungi.</span>
+            <span>Dibuat dengan <i class="fas fa-heart" style="color:var(--red)"></i> untuk masyarakat</span>
+        </div>
+    </div>
 </footer>
 
-<script>
-  // Tab Data Penduduk
-  function showTab(name, btn) {
-    document.querySelectorAll('.data-pane').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.data-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById('tab-' + name).classList.add('active');
-    btn.classList.add('active');
-  }
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
-  // Scroll Animation
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-      }
-    });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Smooth active nav
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-links a');
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 100) current = s.id;
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current
-        ? 'var(--gold)' : '';
-    });
-  });
-
-  // Form submit
-  document.querySelector('.form-submit').addEventListener('click', function() {
-    this.textContent = '✅ Pesan Terkirim!';
-    this.style.background = '#2d7a3a';
-    this.style.color = '#fff';
-    setTimeout(() => {
-      this.textContent = 'Kirim Pesan ✉️';
-      this.style.background = '';
-      this.style.color = '';
-    }, 3000);
-  });
-</script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
